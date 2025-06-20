@@ -33,11 +33,9 @@ gather_lora_results.py  —  仅保留 F1 高于 baseline 的特征
 
 import re, glob, ast, os, pandas as pd
 
-# ───────── 用户可改区域 ────────────────────────────────
 LOG_GLOB   = "logs/lora_*.out"               # 日志文件匹配
 BASE_FILE  = "logs/lora_4846_4294967294.out" # baseline 日志完整路径
 OUT_CSV    = "ege_scan_over_baseline.csv"    # 输出
-# ────────────────────────────────────────────────────
 
 pat = re.compile(r'\[(\-?\d+)] dev ({.*})')
 rows = []
