@@ -87,7 +87,7 @@ def create_feature_embeddings(data, window_size_ms=1000, sampling_rate_ms=250):
     # data['trust_VA_ratio'] = np.abs(data['trust_diff']) / (np.abs(data['VA_adjusted_diff']) + 1e-10)
     # data['log_trust_VA'] = np.log1p(data['trust_VA_ratio'])
     
-    # 构造特征向量（token），此处你可以保留原有的特征
+    # 构造特征向量（token），此处保留原有的特征
     # feature_columns = [
     #     'trustworthiness', 'arousal', 'valence',
     #     'trust_diff', 'arousal_diff', 'valence_diff',
@@ -128,7 +128,7 @@ def create_feature_embeddings(data, window_size_ms=1000, sampling_rate_ms=250):
         # 将该窗口的标签复制到窗口内所有时间步（保持与 transformer 输出一致）
         window_labels.append(np.full(window_size, label))
         
-    # 如果需要单个采样点的标签，可以根据需要设计，此处返回 None
+    # 此处返回 None
     sample_labels = None
     
     return tokens, sample_labels, windows, window_labels
